@@ -4,6 +4,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import androidx.lifecycle.ViewModel
+import com.example.mvvm_sql.MainActivity
 import com.example.mvvm_sql.interfaces.LoginResultCallBack
 
 class LoginViewModel (private val listener: LoginResultCallBack): ViewModel() {
@@ -35,12 +36,12 @@ class LoginViewModel (private val listener: LoginResultCallBack): ViewModel() {
         }
     }
 
-    fun onLoginClicked(v: View) {
+     fun onLoginClicked(v: View) {
         if(user.isDataValid){
-            listener.onSuccess("Успешно")
+            listener.onSuccess("Пользователь был добавлен")
         }
         else{
-            listener.onError("Ты лох")
+            listener.onError("Ошибка. Неверные данные")
         }
     }
 }
